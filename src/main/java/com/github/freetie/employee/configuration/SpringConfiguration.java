@@ -5,8 +5,9 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 
 @Configuration
-@ComponentScan(basePackages = "com.github.freetie.employee") 
+@ComponentScan(basePackages = "com.github.freetie.employee", excludeFilters = {
+		@ComponentScan.Filter(org.springframework.stereotype.Controller.class) })
 @PropertySource("jdbc.properties")
-public class SpringConfiguration  {
-    
+public class SpringConfiguration {
+
 }
